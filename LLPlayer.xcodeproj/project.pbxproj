@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1581BD82DA6B5012F4627E5E /* Pods_LLPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BB3DB1F6EC2C719A8C36D4B /* Pods_LLPlayer.framework */; };
 		D2B8F287224DF9DB00A91D40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F286224DF9DB00A91D40 /* AppDelegate.swift */; };
 		D2B8F289224DF9DB00A91D40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F288224DF9DB00A91D40 /* ViewController.swift */; };
 		D2B8F28C224DF9DB00A91D40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B8F28A224DF9DB00A91D40 /* Main.storyboard */; };
 		D2B8F28E224DF9DB00A91D40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B8F28D224DF9DB00A91D40 /* Assets.xcassets */; };
 		D2B8F291224DF9DB00A91D40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B8F28F224DF9DB00A91D40 /* LaunchScreen.storyboard */; };
+		D2B8F299224DFCBE00A91D40 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F298224DFCBE00A91D40 /* PlayerController.swift */; };
+		D2B8F29F224E048300A91D40 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F29E224E048300A91D40 /* VideoView.swift */; };
+		D2B8F2A3224E0F5000A91D40 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F2A2224E0F5000A91D40 /* AudioPlayer.swift */; };
+		D2B8F2A5224E107200A91D40 /* VideoDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F2A4224E107200A91D40 /* VideoDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F7C6ABAD0FF60F263538BF7 /* Pods-LLPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLPlayer/Pods-LLPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		4BB3DB1F6EC2C719A8C36D4B /* Pods_LLPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LLPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60886FB9E1DE3CD82AB4A300 /* Pods-LLPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLPlayer/Pods-LLPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		D2B8F283224DF9DB00A91D40 /* LLPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B8F286224DF9DB00A91D40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2B8F288224DF9DB00A91D40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +30,10 @@
 		D2B8F28D224DF9DB00A91D40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2B8F290224DF9DB00A91D40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2B8F292224DF9DB00A91D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2B8F298224DFCBE00A91D40 /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
+		D2B8F29E224E048300A91D40 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		D2B8F2A2224E0F5000A91D40 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		D2B8F2A4224E107200A91D40 /* VideoDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1581BD82DA6B5012F4627E5E /* Pods_LLPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FDB2098A2EF5A41CFC48B68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BB3DB1F6EC2C719A8C36D4B /* Pods_LLPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A670439DDBA1C5B69FF0441 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F7C6ABAD0FF60F263538BF7 /* Pods-LLPlayer.debug.xcconfig */,
+				60886FB9E1DE3CD82AB4A300 /* Pods-LLPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D2B8F27A224DF9DB00A91D40 = {
 			isa = PBXGroup;
 			children = (
 				D2B8F285224DF9DB00A91D40 /* LLPlayer */,
 				D2B8F284224DF9DB00A91D40 /* Products */,
+				7A670439DDBA1C5B69FF0441 /* Pods */,
+				3FDB2098A2EF5A41CFC48B68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +92,10 @@
 				D2B8F28D224DF9DB00A91D40 /* Assets.xcassets */,
 				D2B8F28F224DF9DB00A91D40 /* LaunchScreen.storyboard */,
 				D2B8F292224DF9DB00A91D40 /* Info.plist */,
+				D2B8F298224DFCBE00A91D40 /* PlayerController.swift */,
+				D2B8F29E224E048300A91D40 /* VideoView.swift */,
+				D2B8F2A2224E0F5000A91D40 /* AudioPlayer.swift */,
+				D2B8F2A4224E107200A91D40 /* VideoDecoder.swift */,
 			);
 			path = LLPlayer;
 			sourceTree = "<group>";
@@ -71,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2B8F295224DF9DB00A91D40 /* Build configuration list for PBXNativeTarget "LLPlayer" */;
 			buildPhases = (
+				64872A2A00B5B3F36ADC0F21 /* [CP] Check Pods Manifest.lock */,
 				D2B8F27F224DF9DB00A91D40 /* Sources */,
 				D2B8F280224DF9DB00A91D40 /* Frameworks */,
 				D2B8F281224DF9DB00A91D40 /* Resources */,
+				A5370C46EEA1C42105D09511 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +168,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		64872A2A00B5B3F36ADC0F21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LLPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5370C46EEA1C42105D09511 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LLPlayer/Pods-LLPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LLPlayer/Pods-LLPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2B8F27F224DF9DB00A91D40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -137,6 +222,10 @@
 			files = (
 				D2B8F289224DF9DB00A91D40 /* ViewController.swift in Sources */,
 				D2B8F287224DF9DB00A91D40 /* AppDelegate.swift in Sources */,
+				D2B8F2A3224E0F5000A91D40 /* AudioPlayer.swift in Sources */,
+				D2B8F29F224E048300A91D40 /* VideoView.swift in Sources */,
+				D2B8F2A5224E107200A91D40 /* VideoDecoder.swift in Sources */,
+				D2B8F299224DFCBE00A91D40 /* PlayerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +369,13 @@
 		};
 		D2B8F296224DF9DB00A91D40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F7C6ABAD0FF60F263538BF7 /* Pods-LLPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDCPERAN5R;
 				INFOPLIST_FILE = LLPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,11 +389,13 @@
 		};
 		D2B8F297224DF9DB00A91D40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60886FB9E1DE3CD82AB4A300 /* Pods-LLPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDCPERAN5R;
 				INFOPLIST_FILE = LLPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
