@@ -17,6 +17,8 @@
 		D2B8F29F224E048300A91D40 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F29E224E048300A91D40 /* VideoView.swift */; };
 		D2B8F2A3224E0F5000A91D40 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F2A2224E0F5000A91D40 /* AudioPlayer.swift */; };
 		D2B8F2A5224E107200A91D40 /* VideoDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F2A4224E107200A91D40 /* VideoDecoder.swift */; };
+		D2B8F2A7224E20B500A91D40 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F2A6224E20B500A91D40 /* VideoPlayer.swift */; };
+		D2B8F2A922506DF400A91D40 /* ToolBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B8F2A822506DF400A91D40 /* ToolBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		D2B8F29E224E048300A91D40 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		D2B8F2A2224E0F5000A91D40 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		D2B8F2A4224E107200A91D40 /* VideoDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDecoder.swift; sourceTree = "<group>"; };
+		D2B8F2A6224E20B500A91D40 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		D2B8F2A822506DF400A91D40 /* ToolBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,10 @@
 				D2B8F292224DF9DB00A91D40 /* Info.plist */,
 				D2B8F298224DFCBE00A91D40 /* PlayerController.swift */,
 				D2B8F29E224E048300A91D40 /* VideoView.swift */,
+				D2B8F2A6224E20B500A91D40 /* VideoPlayer.swift */,
 				D2B8F2A2224E0F5000A91D40 /* AudioPlayer.swift */,
 				D2B8F2A4224E107200A91D40 /* VideoDecoder.swift */,
+				D2B8F2A822506DF400A91D40 /* ToolBox.swift */,
 			);
 			path = LLPlayer;
 			sourceTree = "<group>";
@@ -220,12 +226,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B8F2A7224E20B500A91D40 /* VideoPlayer.swift in Sources */,
 				D2B8F289224DF9DB00A91D40 /* ViewController.swift in Sources */,
 				D2B8F287224DF9DB00A91D40 /* AppDelegate.swift in Sources */,
 				D2B8F2A3224E0F5000A91D40 /* AudioPlayer.swift in Sources */,
 				D2B8F29F224E048300A91D40 /* VideoView.swift in Sources */,
 				D2B8F2A5224E107200A91D40 /* VideoDecoder.swift in Sources */,
 				D2B8F299224DFCBE00A91D40 /* PlayerController.swift in Sources */,
+				D2B8F2A922506DF400A91D40 /* ToolBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
