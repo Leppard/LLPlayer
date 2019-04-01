@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class VideoPlayer {
+    public func play() {
+        
+    }
+    
+    public func pause() {
+        
+    }
+}
