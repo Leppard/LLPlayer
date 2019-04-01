@@ -25,23 +25,23 @@ class VideoDecoder {
     
     public func decode(fromData data: Data) -> CMSampleBuffer? {
         // 将NALU的startCode替换成AVCC的lengthCode
-        let avcc = ToolBox.annexToAvcc(data: data)
-        guard let bytes = avcc else {
+        let avccData = ToolBox.annexToAvcc(data: data)
+        guard let aData = avccData else {
             return nil
         }
         
-        let naluType: UInt8 = bytes[4] & 0x1F
+        let naluType: UInt8 = aData[4] & 0x1F
         switch naluType {
         case 5:
             // I Frame
             print("I Frame")
         case 7:
             // SPS
-            sps = bytes.subdata(in: 4..<bytes.count)
+            sps = aData.subdata(in: 4..<aData.count)
             print("SPS")
         case 8:
             // PPS
-            pps = bytes.subdata(in: 4..<bytes.count)
+            pps = aData.subdata(in: 4..<aData.count)
             print("PPS")
             
         default:
@@ -49,30 +49,15 @@ class VideoDecoder {
             print("Default NALU")
         }
         
-        
-        
-        return nil
-    }
-    
-    private func createSampleBuffer(fromAvccData data: Data) -> CMSampleBuffer? {
-        let ptr = UnsafeMutablePointer<UInt8>.allocate(capacity: data.count)
-        ptr.initialize(to: 0)
-        data.copyBytes(to: ptr, count: data.count)
-        var blockBuffer: CMBlockBuffer?
-        var status = CMBlockBufferCreateWithMemoryBlock(allocator: kCFAllocatorDefault, memoryBlock: ptr, blockLength: data.count, blockAllocator: kCFAllocatorNull, customBlockSource: nil, offsetToData: 0, dataLength: data.count, flags: 0, blockBufferOut: &blockBuffer)
-        
-        guard status == kCMBlockBufferNoErr else {
-            print("ERROR: \(#function) at \(#line) line")
+        let sampleBuffer = createSampleBuffer(fromAvccData: aData)
+        guard let buffer = sampleBuffer else {
             return nil
         }
+        let attachments = CMSampleBufferGetSampleAttachmentsArray(buffer, createIfNecessary: true)
+        let dict = unsafeBitCast(CFArrayGetValueAtIndex(attachments, 0), to: CFMutableDictionary.self)
+        CFDictionarySetValue(dict, Unmanaged.passUnretained(kCMSampleAttachmentKey_DisplayImmediately).toOpaque(), Unmanaged.passUnretained(kCFBooleanTrue).toOpaque())
         
-        var sampleBuffer: CMSampleBuffer?
-        status = CMSampleBufferCreateReady(allocator: kCFAllocatorDefault, dataBuffer: blockBuffer, formatDescription: formatDesc, sampleCount: 1, sampleTimingEntryCount: 0, sampleTimingArray: nil, sampleSizeEntryCount: 1, sampleSizeArray: [data.count], sampleBufferOut: &sampleBuffer)
-        
-        ptr.deinitialize(count: data.count)
-        ptr.deallocate()
-        
-        return sampleBuffer
+        return buffer
     }
     
     private func updateFormatDesc() {
@@ -96,9 +81,36 @@ class VideoDecoder {
         sPtr.deallocate()
         pPtr.deallocate()
         
-        guard status == kCMBlockBufferNoErr else {
+        guard status == noErr else {
             print("ERROR: \(#function) at \(#line) line")
             return
         }
+    }
+    
+    private func createSampleBuffer(fromAvccData data: Data) -> CMSampleBuffer? {
+        let ptr = UnsafeMutablePointer<UInt8>.allocate(capacity: data.count)
+        ptr.initialize(to: 0)
+        data.copyBytes(to: ptr, count: data.count)
+        
+        var blockBuffer: CMBlockBuffer?
+        var status = CMBlockBufferCreateWithMemoryBlock(allocator: kCFAllocatorDefault, memoryBlock: ptr, blockLength: data.count, blockAllocator: kCFAllocatorNull, customBlockSource: nil, offsetToData: 0, dataLength: data.count, flags: 0, blockBufferOut: &blockBuffer)
+        
+        guard status == noErr else {
+            print("ERROR: \(#function) at \(#line) line")
+            return nil
+        }
+        
+        var sampleBuffer: CMSampleBuffer?
+        status = CMSampleBufferCreateReady(allocator: kCFAllocatorDefault, dataBuffer: blockBuffer, formatDescription: formatDesc, sampleCount: 1, sampleTimingEntryCount: 0, sampleTimingArray: nil, sampleSizeEntryCount: 1, sampleSizeArray: [data.count], sampleBufferOut: &sampleBuffer)
+        
+        ptr.deinitialize(count: data.count)
+        ptr.deallocate()
+        
+        guard status == noErr else {
+            print("ERROR: \(#function) at \(#line) line")
+            return nil
+        }
+        
+        return sampleBuffer
     }
 }
